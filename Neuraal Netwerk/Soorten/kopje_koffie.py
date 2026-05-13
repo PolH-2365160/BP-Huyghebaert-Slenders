@@ -13,7 +13,7 @@ if root_dir not in sys.path:
     sys.path.append(root_dir)
 
 
-# 1. Definieer een functie om het model te creëren met een specifieke architectuur.
+# 1. Definieer een functie om het model te creëren met een specifieke architectuur. 
 def create_model()-> nn.Sequential:
     """Creeer een neuraal netwerk model met een specifieke architectuur.
     Returns:
