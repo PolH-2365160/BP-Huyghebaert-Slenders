@@ -14,11 +14,8 @@ from torch import nn
 # --- CONFIGURATIE ---
 # Zet op True om de benchmarks opnieuw te draaien.
 # Standaard op False: laadt data uit de CSV.
-REGENERATE_DATA = False
+REGENERATE_DATA = True
 
-# Matplotlib instellen voor opslaan zonder pop-ups
-matplotlib.use("Agg")
-plt.ioff()
 
 # Paden instellen
 current_dir = Path(os.path.abspath(os.path.dirname(__file__)))
@@ -32,7 +29,7 @@ from Functies.Impliciete_functie import impliciete_oplossing
 
 
 CSV_PAD = current_dir / 'tijd_analyse_data.csv'
-MODEL_PAD = root_dir / 'Neuraal Netwerk' / 'Getrande_modellen' / '138_punten_model.pth'
+MODEL_PAD = root_dir / 'Neuraal Netwerk' / 'Getrainde_modellen' / '600_punten_model.pth'
 
 # Parameters voor de benchmark (alleen bij REGENERATE_DATA = True)
 L, T, R, D = 20, 20, 1, 1
@@ -150,6 +147,7 @@ def plot_results(data):
     plt.tight_layout()
     plt.savefig(current_dir / 'Rekentijd_vs_Aantal_Punten.png')
 
+
     # Plot 2: Relatieve Snelheidswinst
     data['Snelheidswinst'] = ((data['Gemiddelde_tijd_exact'] / data['Gemiddelde_tijd_nn'])) 
     plt.figure(figsize=(10, 6), num=2)
@@ -195,3 +193,4 @@ if __name__ == '__main__':
             df = benchmark_modellen(device)
     
     plot_results(df)
+    plt.show()

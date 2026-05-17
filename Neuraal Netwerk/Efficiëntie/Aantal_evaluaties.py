@@ -9,7 +9,7 @@ from torch import nn
 from pathlib import Path
 
 # --- CONFIGURATIE ---
-AANTAL_PUNTEN_TRAIN = 138
+AANTAL_PUNTEN_TRAIN = 600
 HERHALINGEN_TRAIN = 5
 EPOCHS = 10000
 BATCH_SIZE = 100000
