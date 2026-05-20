@@ -74,13 +74,14 @@ snelheid = snelheid[snelheid != 0]
 ###### Resultaat van golfsnelheid plotten ######
 
 plot_x_as = np.linspace(0, T, len(snelheid))
-plt.plot(plot_x_as, snelheid, label='Gemiddelde golfsnelheid', color='blue')
+plt.figure(figsize=(10, 6))
+plt.plot(plot_x_as, snelheid, label='Golfsnelheid', color='blue')
 plt.xlim(0, T+4)
 plt.ylim(0, 4)
-plt.axhline(Theoretische_snelheid, color='red', linestyle='--', label=f'Theoretische snelheid = {Theoretische_snelheid:.2f}')
+plt.axhline(Theoretische_snelheid, color='red', linestyle='--', label=f'Theoretische minimale snelheid = {Theoretische_snelheid:.2f}')
 plt.xlabel('Tijd (t)', fontsize=14)
-plt.ylabel('Gemiddelde golfsnelheid', fontsize=14)
-plt.title('Gemiddelde golfsnelheid van de golffront', fontsize=16)
+plt.ylabel('Golfsnelheid', fontsize=14)
+plt.title('Golfsnelheid', fontsize=16)
 plt.grid(True, linestyle=':', alpha=0.7)
 plt.legend(fontsize=12)
 plt.xticks(np.arange(0, T+1, 20), fontsize=14)
